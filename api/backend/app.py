@@ -9,11 +9,8 @@ from langchain_core.prompts import PromptTemplate
 
 app = Flask(__name__)
 
-# Hardcoded allowed origin
-allowed_origin = 'https://rrsrm-tool.vercel.app'
-
-# Set up CORS to allow requests from the hardcoded origin
-CORS(app, resources={r"/*": {"origins": [allowed_origin]}})
+# Define allowed origins
+CORS(app, resources={r"/*": {"origins": ["https://rrsrm-tool.vercel.app"], "methods": ["GET", "POST"], "supports_credentials": True}})
 
 # Reassemble model
 def reassemble_model(chunks_dir, output_file_name):
