@@ -10,7 +10,7 @@ from langchain_core.prompts import PromptTemplate
 app = Flask(__name__)
 
 # Hardcoded allowed origin
-allowed_origin = 'https://rrsrm-tool.vercel.app'
+allowed_origin = 'https://rrsrm-tool.vercel.app/'
 
 # Set up CORS to allow requests from the hardcoded origin
 CORS(app, resources={r"/*": {"origins": [allowed_origin]}})
