@@ -16,7 +16,7 @@
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "api/backend/app.py"
+      "dest": "/api/backend/app.py"
     },
     {
       "src": "/(.*)",
