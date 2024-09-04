@@ -1,0 +1,3 @@
+[submodule "RRSRM-tool"]
+    path = RRSRM-tool
+    url = https://github.com/Daniil-AUT/RRSRM-tool.git
