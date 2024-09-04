@@ -8,9 +8,14 @@ from langchain_community.llms import Ollama
 from langchain_core.prompts import PromptTemplate
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": ["https://rrsrm-tool.vercel.app"]}})
 
-# Reassemble code
+# Hardcoded allowed origin
+allowed_origin = 'https://rrsrm-tool.vercel.app'
+
+# Set up CORS to allow requests from the hardcoded origin
+CORS(app, resources={r"/*": {"origins": [allowed_origin]}})
+
+# Reassemble model
 def reassemble_model(chunks_dir, output_file_name):
     output_file = os.path.join(chunks_dir, output_file_name)
     with open(output_file, 'wb') as f_out:
