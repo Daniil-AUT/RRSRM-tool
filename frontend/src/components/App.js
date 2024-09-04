@@ -13,7 +13,7 @@ const Predictor = () => {
   const [hasFetchedSuggestions, setHasFetchedSuggestions] = useState(false);
 
   // Hardcoded backend URL
-  const backendUrl = 'https://your-backend-url.vercel.app';
+  const backendUrl = 'https://rrsrm-tool-3qax.vercel.app/';
 
   // Function to fetch suggestions
   const fetchSuggestions = async () => {
