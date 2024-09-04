@@ -12,11 +12,14 @@ const Predictor = () => {
   const [isFetchingSuggestions, setIsFetchingSuggestions] = useState(false);
   const [hasFetchedSuggestions, setHasFetchedSuggestions] = useState(false);
 
+  // Hardcoded backend URL
+  const backendUrl = 'https://your-backend-url.vercel.app';
+
   // Function to fetch suggestions
   const fetchSuggestions = async () => {
     setIsFetchingSuggestions(true);
     try {
-      const response = await axios.post('http://127.0.0.1:5000/suggestions', {
+      const response = await axios.post(`${backendUrl}/suggestions`, {
         user_story: userStory,
       });
       setSuggestions(response.data.suggestions);
@@ -32,7 +35,7 @@ const Predictor = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://127.0.0.1:5000/predict', {
+      const response = await axios.post(`${backendUrl}/predict`, {
         user_story: userStory,
       });
       setPrediction(response.data.prediction);
